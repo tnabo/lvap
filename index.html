@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LVAP — Industrial Janitorial & Restroom Supplies</title>
+<meta name="description" content="LVAP Industrial Products — urinal screens, descalers, mats, silicone grease, dispenser keys, and mouse bait station keys. Shop on Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1AB5B5;
+    --teal-dark: #128585;
+    --teal-darker: #0d6363;
+    --ink: #0F2024;
+    --ink-soft: #1d3439;
+    --gray-50: #f5f7f8;
+    --gray-100: #ebeef0;
+    --gray-200: #dde3e6;
+    --gray-400: #8a9aa0;
+    --gray-600: #4d6168;
+    --gray-700: #2c4047;
+    --white: #ffffff;
+    --accent-orange: #ff6a3d;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.55;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: var(--teal-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ TOP UTILITY BAR ============ */
+  .util-bar {
+    background: var(--ink);
+    color: var(--gray-200);
+    font-size: 12px;
+    padding: 8px 0;
+    letter-spacing: 0.3px;
+  }
+  .util-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .util-bar a { color: var(--gray-200); margin-left: 20px; }
+  .util-bar a:hover { color: var(--teal); text-decoration: none; }
+
+  /* ============ HEADER ============ */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    gap: 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo-mark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 38px;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -1px;
+    border: 3px solid var(--ink);
+    border-radius: 8px;
+    padding: 4px 12px 2px;
+    transform: skewX(-6deg);
+  }
+  .logo-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-600);
+    line-height: 1.2;
+  }
+  .logo-text small { display: block; color: var(--teal-dark); font-size: 11px; }
+  nav.main-nav { display: flex; gap: 6px; }
+  nav.main-nav a {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 13px;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: all 0.15s;
+  }
+  nav.main-nav a:hover {
+    background: var(--teal);
+    color: white;
+    text-decoration: none;
+  }
+  .header-cta {
+    background: var(--ink);
+    color: white !important;
+    padding: 11px 18px !important;
+    border-radius: 6px;
+  }
+  .header-cta:hover { background: var(--teal) !important; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #134347 0%, #0d6363 60%, #1AB5B5 100%);
+    color: white;
+    padding: 80px 0 90px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(26,181,181,0.5) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(26,181,181,0.3) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+  .hero .container { position: relative; z-index: 1; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--teal);
+    background: rgba(26,181,181,0.15);
+    padding: 8px 14px;
+    border-radius: 4px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(26,181,181,0.4);
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+  }
+  .hero h1 .accent { color: var(--teal); font-style: italic; }
+  .hero p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    max-width: 540px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-radius: 6px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 2px solid transparent;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--ink);
+  }
+  .btn-primary:hover { background: white; text-decoration: none; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-outline {
+    border-color: rgba(255,255,255,0.4);
+    color: white;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); text-decoration: none; }
+
+  .hero-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    transform: rotate(-2deg);
+  }
+  .hero-tile {
+    background: white;
+    border-radius: 8px;
+    aspect-ratio: 1;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    transition: transform 0.3s;
+  }
+  .hero-tile:nth-child(odd) { transform: translateY(20px); }
+  .hero-tile:hover { transform: translateY(-4px) scale(1.02); }
+  .hero-tile:nth-child(odd):hover { transform: translateY(16px) scale(1.02); }
+  .hero-tile img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ============ CATEGORY STRIP ============ */
+  .categories {
+    background: var(--gray-50);
+    padding: 50px 0;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .cat-card {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 24px 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .cat-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--teal);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.25s;
+  }
+  .cat-card:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: 0 12px 28px rgba(15,32,36,0.08); }
+  .cat-card:hover::before { transform: scaleY(1); }
+  .cat-card.active { border-color: var(--teal); background: var(--ink); color: white; }
+  .cat-card.active::before { transform: scaleY(1); background: var(--teal); }
+  .cat-card.active .cat-count { color: var(--teal); }
+  .cat-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .cat-count {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* ============ MAIN PRODUCTS ============ */
+  main { padding: 70px 0 80px; }
+  .section-head {
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .section-head h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 42px;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .section-head h2 .bar {
+    display: inline-block;
+    width: 56px;
+    height: 5px;
+    background: var(--teal);
+    vertical-align: middle;
+    margin-right: 14px;
+    margin-bottom: 6px;
+  }
+  .section-head .filter-status {
+    font-size: 13px;
+    color: var(--gray-600);
+    font-weight: 500;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 22px;
+  }
+  .product {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.22s;
+    position: relative;
+  }
+  .product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(15,32,36,0.10);
+    border-color: var(--gray-200);
+  }
+  .product-img {
+    background: var(--gray-50);
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 14px;
+    transition: transform 0.4s;
+  }
+  .product:hover .product-img img { transform: scale(1.05); }
+  .product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--ink);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .product-tag.teal { background: var(--teal); color: var(--ink); }
+  .product-tag.orange { background: var(--accent-orange); }
+  .product-body {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .product-cat {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--teal-dark);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 8px;
+    min-height: 39px;
+  }
+  .product-desc {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+  .product-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid var(--gray-100);
+  }
+  .product-pack {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--gray-700);
+    letter-spacing: 0.5px;
+  }
+  .buy-btn {
+    background: var(--teal);
+    color: var(--ink) !important;
+    padding: 9px 14px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: all 0.15s;
+  }
+  .buy-btn:hover { background: var(--ink); color: var(--teal) !important; text-decoration: none; }
+  .buy-btn::after { content: " →"; }
+
+  /* ============ FEATURE STRIP ============ */
+  .features {
+    background: var(--ink);
+    color: white;
+    padding: 60px 0;
+  }
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+  }
+  .feat {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .feat-icon {
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--teal);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--teal);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+  }
+  .feat h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 19px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+  }
+  .feat p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.5;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: #0a181c;
+    color: var(--gray-200);
+    padding: 50px 0 24px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .foot-brand .logo-mark {
+    color: white;
+    border-color: white;
+    margin-bottom: 14px;
+  }
+  .foot-brand p {
+    font-size: 13px;
+    color: var(--gray-400);
+    max-width: 320px;
+    line-height: 1.6;
+  }
+  footer h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 8px; }
+  footer ul a { color: var(--gray-400); font-size: 13px; }
+  footer ul a:hover { color: var(--teal); text-decoration: none; }
+  .foot-bottom {
+    border-top: 1px solid #1d3439;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    .header-inner { flex-wrap: wrap; }
+    nav.main-nav { order: 3; width: 100%; overflow-x: auto; padding-top: 6px; }
+    nav.main-nav a { white-space: nowrap; }
+    .hero { padding: 56px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-visual { max-width: 360px; margin: 0 auto; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+    .section-head h2 { font-size: 32px; }
+  }
+  @media (max-width: 540px) {
+    .foot-grid { grid-template-columns: 1fr; }
+    .util-bar { font-size: 11px; }
+    .util-bar a { margin-left: 12px; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .product-body { padding: 12px; }
+    .product-name { font-size: 13px; min-height: 34px; }
+    .product-desc { display: none; }
+  }
+
+  /* ============ Reveal animation ============ */
+  /* Only hide/animate when JS is available; <html class="js"> is set by inline script. */
+  .js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util-bar">
+  <div class="container">
+    <span>Fast Amazon Prime shipping on every order</span>
+    <span>
+      <a href="#categories">Browse</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">Amazon Storefront →</a>
+    </span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-mark">LVAP</div>
+      <div class="logo-text">
+        Industrial
+        <small>Products</small>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="#all">All</a>
+      <a href="#cat-screens">Screens</a>
+      <a href="#cat-mats">Mats</a>
+      <a href="#cat-descaler">Descaler</a>
+      <a href="#cat-grease">Grease</a>
+      <a href="#cat-keys">Keys</a>
+      <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="header-cta">Shop on Amazon</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">Industrial Janitorial Supplies</span>
+        <h1>Built for the<br><span class="accent">real work</span> of clean.</h1>
+        <p>Heavy-duty restroom and facility supplies trusted by janitorial pros. Urinal screens, mats, descalers, food-grade grease, and dispenser keys — all shipped fast through Amazon.</p>
+        <div class="hero-buttons">
+          <a href="#categories" class="btn btn-primary">Browse Products</a>
+          <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="btn btn-outline">Visit Amazon Store</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-tile"><img src="images/screen-blue-12pk.jpg" alt="Urinal Screens"></div>
+        <div class="hero-tile"><img src="images/descaler-1pk.jpg" alt="Urinal Descaler"></div>
+        <div class="hero-tile"><img src="images/mat-pattern-12pk.jpg" alt="Urinal Mats"></div>
+        <div class="hero-tile"><img src="images/keyset-restroom-s-9pc.jpg" alt="Dispenser Keys"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="cat-grid">
+      <div class="cat-card active" data-filter="all">
+        <div class="cat-name">All Products</div>
+        <div class="cat-count">33 items</div>
+      </div>
+      <div class="cat-card" data-filter="screens">
+        <div class="cat-name">Urinal Screens</div>
+        <div class="cat-count">Anti-Splash · Deodorizing</div>
+      </div>
+      <div class="cat-card" data-filter="mats">
+        <div class="cat-name">Urinal Mats</div>
+        <div class="cat-count">Non-Slip · Absorbent</div>
+      </div>
+      <div class="cat-card" data-filter="descaler">
+        <div class="cat-name">Descalers</div>
+        <div class="cat-count">Heavy-Duty · Pipe-Safe</div>
+      </div>
+      <div class="cat-card" data-filter="grease">
+        <div class="cat-name">Silicone Grease</div>
+        <div class="cat-count">NSF Food-Grade</div>
+      </div>
+      <div class="cat-card" data-filter="keys">
+        <div class="cat-name">Keys & Tools</div>
+        <div class="cat-count">Dispensers · Bait Stations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<main id="all">
+  <div class="container">
+    <div class="section-head">
+      <h2><span class="bar"></span>The Catalog</h2>
+      <div class="filter-status" id="filterStatus">Showing all 33 products</div>
+    </div>
+
+    <!--
+      ===================================================================
+      PRODUCT LIST — edit each product's `href` to point to your Amazon listing.
+      Until you add the real link, "Buy on Amazon" leads to your storefront.
+      To change the displayed name, description, or pack, edit the text below.
+      ===================================================================
+    -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- ============ URINAL SCREENS ============ -->
+      <article class="product reveal" data-category="screens" id="cat-screens">
+        <div class="product-img">
+          <span class="product-tag teal">Best Seller</span>
+          <img src="images/screen-blue-12pk.jpg" alt="Blue Urinal Screen 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Urinal Screen — Blue</div>
+          <div class="product-desc">Wave-pattern deodorizing screen. Reduces splash, eliminates odor.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/screen-black-12pk.jpg" alt="Black Urinal Screen 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Urinal Screen — Black</div>
+          <div class="product-desc">Wave-pattern deodorizing screen with extended fragrance life.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/screen-orange-12pk.jpg" alt="Orange Urinal Screen 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Urinal Screen — Orange</div>
+          <div class="product-desc">Citrus-scented deodorizing screen with anti-splash bristles.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/screen-clear-12pk.jpg" alt="Clear Urinal Screen 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Urinal Screen — Clear</div>
+          <div class="product-desc">Discreet transparent screen with full deodorizing performance.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <span class="product-tag">Bulk</span>
+          <img src="images/screen-24pk.jpg" alt="Urinal Screen 24-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Urinal Screen — 24-Pack</div>
+          <div class="product-desc">Bulk pack for facilities. Mixed colors available.</div>
+          <div class="product-foot">
+            <span class="product-pack">24-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/antisplash-blue-12pk.jpg" alt="Anti-Splash Mat Screen Blue 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Mat Screen — Blue Set</div>
+          <div class="product-desc">Heart-pattern urinal screen with deodorizing surface.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Set</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/antisplash-black-12pk.jpg" alt="Anti-Splash Mat Screen Black 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Mat Screen — Black Set</div>
+          <div class="product-desc">Heart-pattern urinal screen, low-visibility black finish.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Set</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="screens">
+        <div class="product-img">
+          <img src="images/antisplash-orange-12pk.jpg" alt="Anti-Splash Mat Screen Orange 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Screens</div>
+          <div class="product-name">Anti-Splash Mat Screen — Orange Set</div>
+          <div class="product-desc">High-visibility orange heart-pattern screens.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Set</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ URINAL MATS ============ -->
+      <article class="product reveal" data-category="mats" id="cat-mats">
+        <div class="product-img">
+          <span class="product-tag teal">Top Rated</span>
+          <img src="images/mat-pattern-12pk.jpg" alt="Patterned Urinal Mat 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Mats</div>
+          <div class="product-name">Urinal Mat — Patterned</div>
+          <div class="product-desc">Bio-shield, non-slip, water-absorbent. 17.2 × 21.65 in.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="mats">
+        <div class="product-img">
+          <img src="images/mat-plain-12pk.jpg" alt="Plain Urinal Mat 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Mats</div>
+          <div class="product-name">Urinal Mat — Plain</div>
+          <div class="product-desc">Classic flat finish. Non-slip backing, deodorizing surface.</div>
+          <div class="product-foot">
+            <span class="product-pack">12-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="mats">
+        <div class="product-img">
+          <img src="images/mat-plain-8pk.jpg" alt="Plain Urinal Mat 8-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Mats</div>
+          <div class="product-name">Urinal Mat — Plain</div>
+          <div class="product-desc">Same plain mat, smaller pack for smaller facilities.</div>
+          <div class="product-foot">
+            <span class="product-pack">8-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="mats">
+        <div class="product-img">
+          <img src="images/mat-rectangular-8pk.jpg" alt="Rectangular Urinal Mat 8-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Urinal Mats</div>
+          <div class="product-name">Urinal Mat — Rectangular</div>
+          <div class="product-desc">Rectangular cut for standard urinals. Heavy absorption.</div>
+          <div class="product-foot">
+            <span class="product-pack">8-Pack</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ DESCALER ============ -->
+      <article class="product reveal" data-category="descaler" id="cat-descaler">
+        <div class="product-img">
+          <span class="product-tag orange">Heavy Duty</span>
+          <img src="images/descaler-1pk.jpg" alt="LVAP Urinal Descaler 32oz" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Descaler</div>
+          <div class="product-name">Urinal Descaler — Heavy Duty 32oz</div>
+          <div class="product-desc">Fume-free, pipe-safe. Removes salt and uric acid buildup.</div>
+          <div class="product-foot">
+            <span class="product-pack">1 × 32 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="descaler">
+        <div class="product-img">
+          <img src="images/descaler-4pk.jpg" alt="LVAP Urinal Descaler 4-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Descaler</div>
+          <div class="product-name">Urinal Descaler — Heavy Duty</div>
+          <div class="product-desc">Same fume-free formula. Multi-pack value for facilities.</div>
+          <div class="product-foot">
+            <span class="product-pack">4 × 32 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="descaler">
+        <div class="product-img">
+          <img src="images/descaler-6pk.jpg" alt="LVAP Urinal Descaler 6-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Descaler</div>
+          <div class="product-name">Urinal Descaler — Heavy Duty</div>
+          <div class="product-desc">Six-bottle case for monthly maintenance routines.</div>
+          <div class="product-foot">
+            <span class="product-pack">6 × 32 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="descaler">
+        <div class="product-img">
+          <span class="product-tag">Bulk</span>
+          <img src="images/descaler-12pk.jpg" alt="LVAP Urinal Descaler 12-Pack" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Descaler</div>
+          <div class="product-name">Urinal Descaler — Heavy Duty</div>
+          <div class="product-desc">Twelve-bottle case. Best per-unit price for large facilities.</div>
+          <div class="product-foot">
+            <span class="product-pack">12 × 32 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ SILICONE GREASE ============ -->
+      <article class="product reveal" data-category="grease" id="cat-grease">
+        <div class="product-img">
+          <span class="product-tag teal">NSF H1</span>
+          <img src="images/grease-blue-50g.jpg" alt="LVAP Silicone Grease 50g" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Silicone Grease</div>
+          <div class="product-name">Food-Grade Silicone Grease</div>
+          <div class="product-desc">NSF H1 certified. Lubricate, seal, protect. Waterproof.</div>
+          <div class="product-foot">
+            <span class="product-pack">50 g · 1.76 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="grease">
+        <div class="product-img">
+          <img src="images/grease-red-113g.jpg" alt="LVAP Silicone Grease Red 113g" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Silicone Grease</div>
+          <div class="product-name">High-Temp Silicone Grease — Red</div>
+          <div class="product-desc">Heavy-duty red formula. Higher-temperature applications.</div>
+          <div class="product-foot">
+            <span class="product-pack">113 g · 4 oz</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ DISPENSER KEYS ============ -->
+      <article class="product reveal" data-category="keys" id="cat-keys">
+        <div class="product-img">
+          <span class="product-tag teal">Most Popular</span>
+          <img src="images/keyset-restroom-s-7pc.jpg" alt="Restroom Dispenser Key Set 7pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Restroom Dispenser Key Set</div>
+          <div class="product-desc">Master set for paper towel, toilet paper, and soap dispensers.</div>
+          <div class="product-foot">
+            <span class="product-pack">7 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-restroom-s-9pc.jpg" alt="Restroom Dispenser Key Set 9pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Restroom Dispenser Key Set — Extended</div>
+          <div class="product-desc">Extended master set covering nine common dispenser types.</div>
+          <div class="product-foot">
+            <span class="product-pack">9 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-restroom-7pc.jpg" alt="Restroom Keyset 7pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Restroom Keyset — Standard</div>
+          <div class="product-desc">Original seven-key set for most common dispenser brands.</div>
+          <div class="product-foot">
+            <span class="product-pack">7 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-restroom-9pc.jpg" alt="Restroom Keyset 9pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Restroom Keyset — Extended</div>
+          <div class="product-desc">Nine-piece set with additional compartments.</div>
+          <div class="product-foot">
+            <span class="product-pack">9 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <span class="product-tag">Pro Pack</span>
+          <img src="images/keyset-restroom-mix-18pc.jpg" alt="Restroom Keyset 18pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Restroom Keyset — Pro Master</div>
+          <div class="product-desc">Largest available set. Covers nearly any commercial dispenser.</div>
+          <div class="product-foot">
+            <span class="product-pack">18 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-cat74-10pc.jpg" alt="CAT 74 Dispenser Keyset" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">CAT 74 Dispenser Key Set</div>
+          <div class="product-desc">CAT-74 compatible commercial dispenser keys.</div>
+          <div class="product-foot">
+            <span class="product-pack">10 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-waff-10pc.jpg" alt="Waffle Dispenser Keyset" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Dispenser Keys</div>
+          <div class="product-name">Waffle Dispenser Key Set</div>
+          <div class="product-desc">Waffle-pattern dispenser keys, 10-piece commercial set.</div>
+          <div class="product-foot">
+            <span class="product-pack">10 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============ MOUSE BAIT STATION KEYS ============ -->
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-mouse-mix-4pc.jpg" alt="Mouse Bait Station Keys 4pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Mouse Bait Station Keys — Mix</div>
+          <div class="product-desc">Replacement keys for major bait station brands.</div>
+          <div class="product-foot">
+            <span class="product-pack">4 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-mouse-mix-4pc-kc.jpg" alt="Mouse Bait Station Keys 4pc with rings" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Bait Station Keys + Key Rings</div>
+          <div class="product-desc">Four keys with key rings and warning stickers included.</div>
+          <div class="product-foot">
+            <span class="product-pack">4 pcs + KC</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-mouse-mix-8pc.jpg" alt="Mouse Bait Station Keys 8pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Mouse Bait Station Keys — Pro Mix</div>
+          <div class="product-desc">Eight-piece replacement set for pest control professionals.</div>
+          <div class="product-foot">
+            <span class="product-pack">8 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-mouse-mix-8pc-kc.jpg" alt="Mouse Bait Station Keys 8pc with rings" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Pro Bait Keys + Key Rings</div>
+          <div class="product-desc">Eight keys with key rings and bilingual warning stickers.</div>
+          <div class="product-foot">
+            <span class="product-pack">8 pcs + KC</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-aegis-2pc.jpg" alt="Aegis Bait Station Keys 2pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Aegis Replacement Keys</div>
+          <div class="product-desc">Aegis-compatible bait station replacement keys.</div>
+          <div class="product-foot">
+            <span class="product-pack">2 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-bell-2pc.jpg" alt="Bell Bait Station Keys 2pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Bell Replacement Keys</div>
+          <div class="product-desc">Bell Labs-compatible bait station replacement keys.</div>
+          <div class="product-foot">
+            <span class="product-pack">2 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-ezfbs-2pc.jpg" alt="EZ FBS Bait Station Keys 2pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">EZ-FBS Replacement Keys</div>
+          <div class="product-desc">EZ-FBS / fly bait station compatible keys.</div>
+          <div class="product-foot">
+            <span class="product-pack">2 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product reveal" data-category="keys">
+        <div class="product-img">
+          <img src="images/keyset-pevo-2pc.jpg" alt="Protecta Evo Bait Station Keys 2pc" loading="lazy">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Bait Station Keys</div>
+          <div class="product-name">Protecta Evo Replacement Keys</div>
+          <div class="product-desc">Protecta Evo bait station compatible keys.</div>
+          <div class="product-foot">
+            <span class="product-pack">2 pieces</span>
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<!-- FEATURES STRIP -->
+<section class="features">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">✓</div>
+        <div>
+          <h3>Built for Pros</h3>
+          <p>Heavy-duty formulations and materials trusted by janitorial professionals.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">→</div>
+        <div>
+          <h3>Fast Shipping</h3>
+          <p>Amazon Prime-eligible. Most orders arrive in 1–2 business days.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">★</div>
+        <div>
+          <h3>Verified Reviews</h3>
+          <p>Read real buyer reviews directly on every Amazon product listing.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">$</div>
+        <div>
+          <h3>Bulk Savings</h3>
+          <p>Case packs and multi-units priced for facility-level use.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo-mark">LVAP</div>
+        <p>LVAP Industrial Products — janitorial, restroom, and facility supplies sold through Amazon.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#cat-screens">Urinal Screens</a></li>
+          <li><a href="#cat-mats">Urinal Mats</a></li>
+          <li><a href="#cat-descaler">Descalers</a></li>
+          <li><a href="#cat-grease">Silicone Grease</a></li>
+          <li><a href="#cat-keys">Keys & Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Amazon</h4>
+        <ul>
+          <li><a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">Visit Storefront</a></li>
+          <li><a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">View All Listings</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:your@email.com">your@email.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 LVAP Industrial Products. All rights reserved.</span>
+      <span>Products sold and fulfilled by Amazon.com.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============ CATEGORY FILTERING ============
+  const cards = document.querySelectorAll('.cat-card');
+  const products = document.querySelectorAll('.product');
+  const status = document.getElementById('filterStatus');
+
+  function applyFilter(filter) {
+    let count = 0;
+    products.forEach(p => {
+      const show = (filter === 'all') || (p.dataset.category === filter);
+      p.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    status.textContent = `Showing ${count} product${count !== 1 ? 's' : ''}` +
+      (filter === 'all' ? '' : ` in ${filter}`);
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      applyFilter(card.dataset.filter);
+      document.getElementById('all').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ============ REVEAL ON SCROLL ============
+  try {
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    }
+  } catch (e) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
