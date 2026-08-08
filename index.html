@@ -89,17 +89,9 @@
     gap: 14px;
   }
   .logo-mark {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 800;
-    font-style: italic;
-    font-size: 38px;
-    line-height: 1;
-    color: var(--ink);
-    letter-spacing: -1px;
-    border: 3px solid var(--ink);
-    border-radius: 8px;
-    padding: 4px 12px 2px;
-    transform: skewX(-6deg);
+    display: block;
+    height: 34px;
+    width: auto;
   }
   .logo-text {
     font-family: 'Barlow Condensed', sans-serif;
@@ -497,9 +489,9 @@
     margin-bottom: 36px;
   }
   .foot-brand .logo-mark {
-    color: white;
-    border-color: white;
+    height: 30px;
     margin-bottom: 14px;
+    filter: invert(1);
   }
   .foot-brand p {
     font-size: 13px;
@@ -577,13 +569,13 @@
 <!-- HEADER -->
 <header>
   <div class="container header-inner">
-    <div class="logo">
-      <div class="logo-mark">LVAP</div>
+    <a href="#top" class="logo">
+      <img class="logo-mark" src="images/logo.svg" alt="LVAP" width="170" height="34">
       <div class="logo-text">
         Industrial
         <small>Products</small>
       </div>
-    </div>
+    </a>
     <nav class="main-nav">
       <a href="#all">All</a>
       <a href="#cat-screens">Screens</a>
@@ -1222,7 +1214,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="logo-mark">LVAP</div>
+        <img class="logo-mark" src="images/logo.svg" alt="LVAP" width="150" height="30">
         <p>LVAP Industrial Products — janitorial, restroom, and facility supplies sold through Amazon.</p>
       </div>
       <div>
