@@ -103,7 +103,7 @@
     line-height: 1.2;
   }
   .logo-text small { display: block; color: var(--teal-dark); font-size: 11px; }
-  nav.main-nav { display: flex; gap: 6px; }
+  nav.main-nav { display: flex; gap: 6px; align-items: center; }
   nav.main-nav a {
     color: var(--ink);
     font-weight: 600;
@@ -128,7 +128,7 @@
   .header-cta:hover { background: var(--teal) !important; }
 
   /* ============ PRODUCTS DROPDOWN ============ */
-  .nav-dropdown { position: relative; }
+  .nav-dropdown { position: relative; display: flex; align-items: center; }
   .nav-dropdown > a::after { content: " ▾"; font-size: 10px; opacity: 0.7; }
   .nav-menu {
     position: absolute;
@@ -667,7 +667,7 @@
     <span></span>
     <span>
       <a href="products.html">Browse</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">Amazon Storefront →</a>
     </span>
   </div>
@@ -697,7 +697,7 @@
           <a href="products.html?filter=keys">Keys &amp; Tools</a>
         </div>
       </div>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="header-cta">Shop on Amazon</a>
     </nav>
   </div>
@@ -708,38 +708,6 @@
   <div class="container">
     <h1>Our Products</h1>
     <p>Browse our full catalog of janitorial, restroom, and facility maintenance supplies. Filter by category below.</p>
-  </div>
-</section>
-
-<!-- CATEGORIES -->
-<section class="categories" id="categories">
-  <div class="container">
-    <div class="cat-grid">
-      <div class="cat-card active" data-filter="all">
-        <div class="cat-name">All Products</div>
-        <div class="cat-count">50 items</div>
-      </div>
-      <div class="cat-card" data-filter="screens">
-        <div class="cat-name">Urinal Screens</div>
-        <div class="cat-count">Anti-Splash · Deodorizing</div>
-      </div>
-      <div class="cat-card" data-filter="mats">
-        <div class="cat-name">Urinal Mats</div>
-        <div class="cat-count">Non-Slip · Absorbent</div>
-      </div>
-      <div class="cat-card" data-filter="descaler">
-        <div class="cat-name">Descalers</div>
-        <div class="cat-count">Heavy-Duty · Pipe-Safe</div>
-      </div>
-      <div class="cat-card" data-filter="grease">
-        <div class="cat-name">Silicone Grease</div>
-        <div class="cat-count">NSF Food-Grade</div>
-      </div>
-      <div class="cat-card" data-filter="keys">
-        <div class="cat-name">Keys & Tools</div>
-        <div class="cat-count">Dispensers · Bait Stations</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -758,10 +726,6 @@
       To change the displayed name, description, or pack, edit the text below.
       ===================================================================
     -->
-    <div class="section-banner">
-      <img src="images/banner-restroom.jpg" alt="Restroom Maintenance Solutions">
-    </div>
-
     <div class="product-grid" id="productGrid">
 
       <!-- ============ URINAL SCREENS ============ -->
@@ -1623,39 +1587,27 @@
 </footer>
 
 <script>
-  // ============ CATEGORY FILTERING ============
-  const cards = document.querySelectorAll('.cat-card');
+  // ============ CATEGORY FILTERING (driven by ?filter=... URL param) ============
   const products = document.querySelectorAll('.product');
+  const dividers = document.querySelectorAll('.section-banner.in-grid');
   const status = document.getElementById('filterStatus');
+  const VALID = ['all','screens','mats','descaler','grease','keys'];
 
   function applyFilter(filter) {
+    if (!VALID.includes(filter)) filter = 'all';
     let count = 0;
     products.forEach(p => {
       const show = (filter === 'all') || (p.dataset.category === filter);
       p.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    status.textContent = `Showing ${count} product${count !== 1 ? 's' : ''}` +
-      (filter === 'all' ? '' : ` in ${filter}`);
+    // hide inline section-banner dividers when filtering to a single category
+    dividers.forEach(d => { d.style.display = (filter === 'all') ? '' : 'none'; });
+    const label = filter === 'all' ? 'all products' : `products in ${filter}`;
+    if (status) status.textContent = `Showing ${count} ${label}`;
   }
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      applyFilter(card.dataset.filter);
-    });
-  });
-
-  // ============ AUTO-FILTER FROM ?filter=... URL PARAM ============
-  (function() {
-    const params = new URLSearchParams(window.location.search);
-    const wanted = params.get('filter');
-    if (!wanted) return;
-    const target = cards.length && [...cards].some(c => c.dataset.filter === wanted) ? wanted : 'all';
-    cards.forEach(c => c.classList.toggle('active', c.dataset.filter === target));
-    applyFilter(target);
-  })();
+  applyFilter(new URLSearchParams(window.location.search).get('filter') || 'all');
 
   // ============ PRODUCTS DROPDOWN — MOBILE TAP TO TOGGLE ============
   document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {

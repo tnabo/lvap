@@ -4,7 +4,7 @@
 <script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LVAP — Industrial Janitorial & Restroom Supplies</title>
+<title>Contact — LVAP Industrial</title>
 <meta name="description" content="LVAP Industrial Products — urinal screens, descalers, mats, silicone grease, dispenser keys, and mouse bait station keys. Shop on Amazon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,18 +166,196 @@
   .nav-menu a:hover { background: var(--gray-50); color: var(--teal-dark); text-decoration: none; }
   .nav-menu-divider { border-top: 1px solid var(--gray-100); margin: 6px 0; }
 
-  /* ============ HERO BANNER ============ */
-  .hero-banner {
+  /* ============ PAGE HEADER ============ */
+  .page-header {
     background: var(--ink);
-    overflow: hidden;
+    color: white;
+    padding: 56px 0 40px;
+    border-bottom: 4px solid var(--teal);
   }
-  .hero-banner img {
+  .page-header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 56px);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    max-width: 640px;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-section {
+    padding: 60px 0 80px;
+    background: var(--gray-50);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .contact-form {
+    background: white;
+    padding: 34px 34px 28px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-100);
+    box-shadow: 0 4px 12px rgba(15,32,36,0.04);
+  }
+  .contact-form h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    margin-bottom: 8px;
+  }
+  .contact-form .form-lead {
+    color: var(--gray-600);
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .form-row { margin-bottom: 16px; }
+  .form-row.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-row.two-col > div { margin: 0; }
+  .form-row label {
     display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+  }
+  .form-row input,
+  .form-row textarea,
+  .form-row select {
     width: 100%;
-    height: auto;
-    max-height: 480px;
-    object-fit: cover;
-    object-position: center;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    padding: 12px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 6px;
+    background: white;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus,
+  .form-row select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(26,181,181,0.15);
+  }
+  .form-row textarea { min-height: 140px; resize: vertical; }
+  .form-note {
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-top: -6px;
+    margin-bottom: 18px;
+  }
+  .form-submit {
+    background: var(--teal);
+    color: var(--ink);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 28px;
+    border: 2px solid var(--teal);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  }
+  .form-submit:hover {
+    background: var(--ink);
+    color: var(--teal);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .contact-info {
+    background: var(--ink);
+    color: white;
+    padding: 34px;
+    border-radius: 10px;
+  }
+  .contact-info h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+  }
+  .contact-info .info-lead {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-bottom: 26px;
+  }
+  .contact-info-item { margin-bottom: 22px; }
+  .contact-info-item:last-child { margin-bottom: 0; }
+  .contact-info-item .label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--teal);
+    margin-bottom: 4px;
+  }
+  .contact-info-item .value {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  .contact-info-item .value a { color: white; }
+  .contact-info-item .value a:hover { color: var(--teal); }
+  .contact-info-item small {
+    display: block;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+    line-height: 1.5;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .form-thanks {
+    display: none;
+    padding: 40px 24px;
+    background: rgba(26,181,181,0.08);
+    border: 1.5px solid rgba(26,181,181,0.35);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-thanks.show { display: block; }
+  .form-thanks h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 6px;
+  }
+  .form-thanks p {
+    font-size: 14px;
+    color: var(--gray-700);
+  }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+    .form-row.two-col { grid-template-columns: 1fr; }
   }
   .btn {
     display: inline-block;
@@ -695,48 +873,102 @@
   </div>
 </header>
 
-<!-- HERO BANNER -->
-<section class="hero-banner">
-  <img src="images/banner-hero.jpg" alt="LVAP Industrial Products — janitorial and facility maintenance professionals">
-</section>
-
-<!-- TAGLINE -->
-<section class="tagline">
+<!-- PAGE HEADER -->
+<section class="page-header">
   <div class="container">
-    <h2>Industrial-Grade Maintenance <span class="accent">Solutions for Professionals</span></h2>
+    <h1>Contact Us</h1>
+    <p>Questions about a product, bulk orders, or wholesale inquiries? Send us a message and we'll get back to you within one business day.</p>
   </div>
 </section>
 
-<!-- CATEGORY TILES -->
-<section class="cat-tiles">
+<!-- CONTACT FORM + INFO -->
+<section class="contact-section">
   <div class="container">
-    <div class="cat-tiles-grid">
-      <a href="products.html?filter=grease" class="cat-tile">
-        <img src="images/tile-grease.jpg" alt="Food Grade Silicone Grease">
-      </a>
-      <a href="products.html?filter=keys" class="cat-tile">
-        <img src="images/tile-keys-disp.jpg" alt="Dispenser Key Sets">
-      </a>
-      <a href="products.html?filter=screens" class="cat-tile">
-        <img src="images/tile-urinal.jpg" alt="Urinal Cleaning Supplies">
-      </a>
-      <a href="products.html?filter=keys" class="cat-tile">
-        <img src="images/tile-keys-bait.jpg" alt="Mouse Bait Station Keys">
-      </a>
+    <div class="contact-grid">
+
+      <div class="contact-form">
+        <div id="formThanks" class="form-thanks">
+          <h3>Thanks — message sent</h3>
+          <p>We'll get back to you shortly at the email you provided.</p>
+        </div>
+        <div id="formWrap">
+          <h2>Send us a message</h2>
+          <p class="form-lead">Fill out the form and we'll reply by email. Required fields are marked with *.</p>
+
+          <form id="contactForm" action="https://formsubmit.co/LVAPCONTACT@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New contact from lvap-products.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://lvap-products.com/contact.html?sent=1">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row two-col">
+              <div>
+                <label for="cf-name">Name *</label>
+                <input type="text" id="cf-name" name="name" required autocomplete="name">
+              </div>
+              <div>
+                <label for="cf-email">Email *</label>
+                <input type="email" id="cf-email" name="email" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-row two-col">
+              <div>
+                <label for="cf-company">Company</label>
+                <input type="text" id="cf-company" name="company" autocomplete="organization">
+              </div>
+              <div>
+                <label for="cf-topic">Topic *</label>
+                <select id="cf-topic" name="topic" required>
+                  <option value="" disabled selected>Choose one…</option>
+                  <option>Product question</option>
+                  <option>Bulk / wholesale inquiry</option>
+                  <option>Order / shipping issue</option>
+                  <option>Partnership</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="cf-message">Message *</label>
+              <textarea id="cf-message" name="message" required placeholder="How can we help?"></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send message</button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="contact-info">
+        <h3>Get in touch</h3>
+        <p class="info-lead">Prefer to email us directly? Here's how to reach us.</p>
+
+        <div class="contact-info-item">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:LVAPCONTACT@gmail.com">LVAPCONTACT@gmail.com</a></div>
+          <small>Best for product questions, orders, and general inquiries.</small>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="label">Shop</div>
+          <div class="value">
+            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">Amazon Storefront →</a>
+          </div>
+          <small>All LVAP products ship from Amazon.</small>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="label">Response Time</div>
+          <div class="value">Within 1 business day</div>
+          <small>Monday–Friday. Weekend inquiries answered on Monday.</small>
+        </div>
+      </aside>
+
     </div>
   </div>
 </section>
-
-<!-- ABOUT BLOCK -->
-<section class="about-block">
-  <div class="container">
-    <div class="about-card">
-      <h3>We are an American-based company</h3>
-      <p>We specialize in delivering dependable solutions for cleaning, repairs, and facility upkeep. Our products are engineered to perform reliably in demanding commercial settings.</p>
-    </div>
-  </div>
-</section>
-
 
 <!-- AMERICAN OWNED STRIP -->
 <section class="american-strip">
@@ -823,7 +1055,6 @@
   // ============ PRODUCTS DROPDOWN — MOBILE TAP TO TOGGLE ============
   document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
-      // On touch devices, first tap opens the dropdown instead of navigating.
       const dd = trigger.parentElement;
       const isOpen = dd.classList.contains('open');
       if (window.matchMedia('(hover: none)').matches && !isOpen) {
@@ -838,6 +1069,13 @@
       document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
     }
   });
+
+  // ============ SHOW "THANKS" AFTER FORMSUBMIT REDIRECT (?sent=1) ============
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    document.getElementById('formThanks').classList.add('show');
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('formThanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 </script>
 
 </body>
