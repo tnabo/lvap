@@ -127,6 +127,45 @@
   }
   .header-cta:hover { background: var(--teal) !important; }
 
+  /* ============ PRODUCTS DROPDOWN ============ */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a::after { content: " ▾"; font-size: 10px; opacity: 0.7; }
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 220px;
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(15,32,36,0.12);
+    padding: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+    z-index: 100;
+  }
+  .nav-dropdown:hover .nav-menu,
+  .nav-dropdown:focus-within .nav-menu,
+  .nav-dropdown.open .nav-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-menu a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    border-radius: 5px;
+  }
+  .nav-menu a:hover { background: var(--gray-50); color: var(--teal-dark); text-decoration: none; }
+  .nav-menu-divider { border-top: 1px solid var(--gray-100); margin: 6px 0; }
+
   /* ============ HERO BANNER ============ */
   .hero-banner {
     background: var(--ink);
@@ -619,7 +658,7 @@
   <div class="container">
     <span></span>
     <span>
-      <a href="#categories">Browse</a>
+      <a href="products.html">Browse</a>
       <a href="#contact">Contact</a>
       <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener">Amazon Storefront →</a>
     </span>
@@ -637,12 +676,20 @@
       </div>
     </a>
     <nav class="main-nav">
-      <a href="#all">All</a>
-      <a href="#cat-screens">Screens</a>
-      <a href="#cat-mats">Mats</a>
-      <a href="#cat-descaler">Descaler</a>
-      <a href="#cat-grease">Grease</a>
-      <a href="#cat-keys">Keys</a>
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="products.html">Products</a>
+        <div class="nav-menu">
+          <a href="products.html?filter=all">All Products</a>
+          <div class="nav-menu-divider"></div>
+          <a href="products.html?filter=screens">Urinal Screens</a>
+          <a href="products.html?filter=mats">Urinal Mats</a>
+          <a href="products.html?filter=descaler">Descalers</a>
+          <a href="products.html?filter=grease">Silicone Grease</a>
+          <a href="products.html?filter=keys">Keys &amp; Tools</a>
+        </div>
+      </div>
+      <a href="#contact">Contact</a>
       <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="header-cta">Shop on Amazon</a>
     </nav>
   </div>
@@ -664,21 +711,17 @@
 <section class="cat-tiles">
   <div class="container">
     <div class="cat-tiles-grid">
-      <a href="#cat-grease" class="cat-tile" data-jump="grease">
-        <img src="images/grease-red-113g.jpg" alt="Food-grade silicone grease">
-        <span class="cat-tile-label">Food Grade Silicone Grease</span>
+      <a href="products.html?filter=grease" class="cat-tile">
+        <img src="images/tile-grease.jpg" alt="Food Grade Silicone Grease">
       </a>
-      <a href="#cat-keys" class="cat-tile" data-jump="keys">
-        <img src="images/keyset-restroom-s-7pc.jpg" alt="Dispenser key sets">
-        <span class="cat-tile-label">Dispenser Key Sets</span>
+      <a href="products.html?filter=keys" class="cat-tile">
+        <img src="images/tile-keys-disp.jpg" alt="Dispenser Key Sets">
       </a>
-      <a href="#cat-screens" class="cat-tile" data-jump="screens">
-        <img src="images/screen-blue-12pk.jpg" alt="Urinal cleaning supplies">
-        <span class="cat-tile-label">Urinal Cleaning Supplies</span>
+      <a href="products.html?filter=screens" class="cat-tile">
+        <img src="images/tile-urinal.jpg" alt="Urinal Cleaning Supplies">
       </a>
-      <a href="#cat-keys" class="cat-tile" data-jump="keys">
-        <img src="images/keyset-mouse-mix-8pc-kc.jpg" alt="Bait station keys">
-        <span class="cat-tile-label">Bait Station Keys</span>
+      <a href="products.html?filter=keys" class="cat-tile">
+        <img src="images/tile-keys-bait.jpg" alt="Mouse Bait Station Keys">
       </a>
     </div>
   </div>
@@ -694,835 +737,6 @@
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="categories" id="categories">
-  <div class="container">
-    <div class="cat-grid">
-      <div class="cat-card active" data-filter="all">
-        <div class="cat-name">All Products</div>
-        <div class="cat-count">50 items</div>
-      </div>
-      <div class="cat-card" data-filter="screens">
-        <div class="cat-name">Urinal Screens</div>
-        <div class="cat-count">Anti-Splash · Deodorizing</div>
-      </div>
-      <div class="cat-card" data-filter="mats">
-        <div class="cat-name">Urinal Mats</div>
-        <div class="cat-count">Non-Slip · Absorbent</div>
-      </div>
-      <div class="cat-card" data-filter="descaler">
-        <div class="cat-name">Descalers</div>
-        <div class="cat-count">Heavy-Duty · Pipe-Safe</div>
-      </div>
-      <div class="cat-card" data-filter="grease">
-        <div class="cat-name">Silicone Grease</div>
-        <div class="cat-count">NSF Food-Grade</div>
-      </div>
-      <div class="cat-card" data-filter="keys">
-        <div class="cat-name">Keys & Tools</div>
-        <div class="cat-count">Dispensers · Bait Stations</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<main id="all">
-  <div class="container">
-    <div class="section-head">
-      <h2><span class="bar"></span>The Catalog</h2>
-      <div class="filter-status" id="filterStatus">Showing all 50 products</div>
-    </div>
-
-    <!--
-      ===================================================================
-      PRODUCT LIST — edit each product's `href` to point to your Amazon listing.
-      Until you add the real link, "Buy on Amazon" leads to your storefront.
-      To change the displayed name, description, or pack, edit the text below.
-      ===================================================================
-    -->
-    <div class="section-banner">
-      <img src="images/banner-restroom.jpg" alt="Restroom Maintenance Solutions">
-    </div>
-
-    <div class="product-grid" id="productGrid">
-
-      <!-- ============ URINAL SCREENS ============ -->
-      <article class="product reveal" data-category="screens" id="cat-screens">
-        <div class="product-img">
-          <span class="product-tag teal">Best Seller</span>
-          <img src="images/screen-blue-12pk.jpg" alt="Blue Urinal Screen 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Urinal Screen — Blue</div>
-          <div class="product-desc">Wave-pattern deodorizing screen. Reduces splash, eliminates odor.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-black-12pk.jpg" alt="Black Urinal Screen 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Urinal Screen — Black</div>
-          <div class="product-desc">Wave-pattern deodorizing screen with extended fragrance life.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-orange-12pk.jpg" alt="Orange Urinal Screen 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Urinal Screen — Orange</div>
-          <div class="product-desc">Citrus-scented deodorizing screen with anti-splash bristles.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-clear-12pk.jpg" alt="Clear Urinal Screen 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Urinal Screen — Clear</div>
-          <div class="product-desc">Discreet transparent screen with full deodorizing performance.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <span class="product-tag">Bulk</span>
-          <img src="images/screen-24pk.jpg" alt="Urinal Screen 24-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Urinal Screen — 24-Pack</div>
-          <div class="product-desc">Bulk pack for facilities. Mixed colors available.</div>
-          <div class="product-foot">
-            <span class="product-pack">24-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/antisplash-blue-12pk.jpg" alt="Anti-Splash Mat Screen Blue 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Mat Screen — Blue Set</div>
-          <div class="product-desc">Heart-pattern urinal screen with deodorizing surface.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Set</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/antisplash-black-12pk.jpg" alt="Anti-Splash Mat Screen Black 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Mat Screen — Black Set</div>
-          <div class="product-desc">Heart-pattern urinal screen, low-visibility black finish.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Set</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/antisplash-orange-12pk.jpg" alt="Anti-Splash Mat Screen Orange 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Anti-Splash Mat Screen — Orange Set</div>
-          <div class="product-desc">High-visibility orange heart-pattern screens.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Set</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-black-gloves-12pk.jpg" alt="Urinal Screen Deodorizer + Gloves Black 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Urinal Screen Deodorizer + Gloves — Black</div>
-          <div class="product-desc">Black anti-splash urinal screens with twelve free gloves for hygienic changes.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack (+12 gloves)</span>
-            <a href="https://www.amazon.com/dp/B0FX9WF6NK" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-blue-gloves-12pk.jpg" alt="Urinal Screen Deodorizer + Gloves Blue 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Urinal Screen Deodorizer + Gloves — Blue</div>
-          <div class="product-desc">Blue anti-splash urinal screens bundled with twelve disposable gloves for easy swaps.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack (+12 gloves)</span>
-            <a href="https://www.amazon.com/dp/B0FX9XWH2K" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-orange-gloves-12pk.jpg" alt="Urinal Screen Deodorizer + Gloves Orange 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Urinal Screen Deodorizer + Gloves — Orange</div>
-          <div class="product-desc">Orange anti-splash urinal screens with twelve free gloves for mess-free installation.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack (+12 gloves)</span>
-            <a href="https://www.amazon.com/dp/B0H2F63TW7" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <img src="images/screen-clear-gloves-12pk.jpg" alt="Urinal Screen Deodorizer + Gloves Transparent 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Urinal Screen Deodorizer + Gloves — Transparent</div>
-          <div class="product-desc">Transparent anti-splash urinal screens with twelve free gloves for discreet odor control.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack (+12 gloves)</span>
-            <a href="https://www.amazon.com/dp/B0FX9Z12NQ" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="screens">
-        <div class="product-img">
-          <span class="product-tag">Bulk</span>
-          <img src="images/screen-variety-24pk.jpg" alt="Urinal Screen Deodorizer Variety + Gloves 24-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Screens</div>
-          <div class="product-name">Urinal Screen Variety + Gloves — 3 Colors</div>
-          <div class="product-desc">Twenty-four anti-splash urinal screens in three scents, gloves included.</div>
-          <div class="product-foot">
-            <span class="product-pack">24-Pack (+24 gloves)</span>
-            <a href="https://www.amazon.com/dp/B0FX9WG6M2" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ URINAL MATS ============ -->
-      <article class="product reveal" data-category="mats" id="cat-mats">
-        <div class="product-img">
-          <span class="product-tag teal">Top Rated</span>
-          <img src="images/mat-pattern-12pk.jpg" alt="Patterned Urinal Mat 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Mats</div>
-          <div class="product-name">Urinal Mat — Patterned</div>
-          <div class="product-desc">Bio-shield, non-slip, water-absorbent. 17.2 × 21.65 in.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="mats">
-        <div class="product-img">
-          <img src="images/mat-plain-12pk.jpg" alt="Plain Urinal Mat 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Mats</div>
-          <div class="product-name">Urinal Mat — Plain</div>
-          <div class="product-desc">Classic flat finish. Non-slip backing, deodorizing surface.</div>
-          <div class="product-foot">
-            <span class="product-pack">12-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="mats">
-        <div class="product-img">
-          <img src="images/mat-plain-8pk.jpg" alt="Plain Urinal Mat 8-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Mats</div>
-          <div class="product-name">Urinal Mat — Plain</div>
-          <div class="product-desc">Same plain mat, smaller pack for smaller facilities.</div>
-          <div class="product-foot">
-            <span class="product-pack">8-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="mats">
-        <div class="product-img">
-          <img src="images/mat-rectangular-8pk.jpg" alt="Rectangular Urinal Mat 8-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Urinal Mats</div>
-          <div class="product-name">Urinal Mat — Rectangular</div>
-          <div class="product-desc">Rectangular cut for standard urinals. Heavy absorption.</div>
-          <div class="product-foot">
-            <span class="product-pack">8-Pack</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ DESCALER ============ -->
-      <article class="product reveal" data-category="descaler" id="cat-descaler">
-        <div class="product-img">
-          <span class="product-tag orange">Heavy Duty</span>
-          <img src="images/descaler-1pk.jpg" alt="LVAP Urinal Descaler 32oz" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Descaler</div>
-          <div class="product-name">Urinal Descaler — Heavy Duty 32oz</div>
-          <div class="product-desc">Fume-free, pipe-safe. Removes salt and uric acid buildup.</div>
-          <div class="product-foot">
-            <span class="product-pack">1 × 32 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-4pk.jpg" alt="LVAP Urinal Descaler 4-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Descaler</div>
-          <div class="product-name">Urinal Descaler — Heavy Duty</div>
-          <div class="product-desc">Same fume-free formula. Multi-pack value for facilities.</div>
-          <div class="product-foot">
-            <span class="product-pack">4 × 32 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-6pk.jpg" alt="LVAP Urinal Descaler 6-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Descaler</div>
-          <div class="product-name">Urinal Descaler — Heavy Duty</div>
-          <div class="product-desc">Six-bottle case for monthly maintenance routines.</div>
-          <div class="product-foot">
-            <span class="product-pack">6 × 32 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <span class="product-tag">Bulk</span>
-          <img src="images/descaler-12pk.jpg" alt="LVAP Urinal Descaler 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Descaler</div>
-          <div class="product-name">Urinal Descaler — Heavy Duty</div>
-          <div class="product-desc">Twelve-bottle case. Best per-unit price for large facilities.</div>
-          <div class="product-foot">
-            <span class="product-pack">12 × 32 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-toilet-1pk.jpg" alt="LVAP Toilet Bowl Descaler 32oz" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty 32oz</div>
-          <div class="product-desc">Industrial-strength acidic toilet cleaner removing lime scale and rust from porcelain.</div>
-          <div class="product-foot">
-            <span class="product-pack">1 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0H428BWD8" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-toilet-2pk.jpg" alt="LVAP Toilet Bowl Descaler 2-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty</div>
-          <div class="product-desc">Two-bottle pack of acidic toilet bowl descaler for porcelain and ceramic.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0HGY771GY" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-toilet-3pk.jpg" alt="LVAP Toilet Bowl Descaler 3-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty</div>
-          <div class="product-desc">Three-bottle pack of industrial-strength toilet descaler for lime scale and rust.</div>
-          <div class="product-foot">
-            <span class="product-pack">3 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0HGYBQVFQ" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-toilet-4pk.jpg" alt="LVAP Toilet Bowl Descaler 4-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty</div>
-          <div class="product-desc">Four-bottle case of acidic toilet bowl cleaner for commercial fixtures.</div>
-          <div class="product-foot">
-            <span class="product-pack">4 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0H8QKFKCL" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <img src="images/descaler-toilet-6pk.jpg" alt="LVAP Toilet Bowl Descaler 6-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty</div>
-          <div class="product-desc">Six-bottle case of industrial toilet descaler for porcelain and ceramic fixtures.</div>
-          <div class="product-foot">
-            <span class="product-pack">6 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0H8QMZMT6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="descaler">
-        <div class="product-img">
-          <span class="product-tag">Bulk</span>
-          <img src="images/descaler-toilet-12pk.jpg" alt="LVAP Toilet Bowl Descaler 12-Pack" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Toilet Bowl Descaler</div>
-          <div class="product-name">Toilet Bowl Descaler — Heavy Duty</div>
-          <div class="product-desc">Twelve-bottle bulk case of acidic toilet descaler for facility maintenance teams.</div>
-          <div class="product-foot">
-            <span class="product-pack">12 × 32 oz</span>
-            <a href="https://www.amazon.com/dp/B0H8QMF2DY" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ SECTION DIVIDER ============ -->
-      <div class="section-banner in-grid">
-        <img src="images/banner-components.jpg" alt="Replacement & Maintenance Components">
-      </div>
-
-      <!-- ============ SILICONE GREASE ============ -->
-      <article class="product reveal" data-category="grease" id="cat-grease">
-        <div class="product-img">
-          <span class="product-tag teal">NSF H1</span>
-          <img src="images/grease-blue-50g.jpg" alt="LVAP Silicone Grease 50g" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Silicone Grease</div>
-          <div class="product-name">Food-Grade Silicone Grease</div>
-          <div class="product-desc">NSF H1 certified. Lubricate, seal, protect. Waterproof.</div>
-          <div class="product-foot">
-            <span class="product-pack">50 g · 1.76 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="grease">
-        <div class="product-img">
-          <img src="images/grease-red-113g.jpg" alt="LVAP Silicone Grease Red 113g" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Silicone Grease</div>
-          <div class="product-name">High-Temp Silicone Grease — Red</div>
-          <div class="product-desc">Heavy-duty red formula. Higher-temperature applications.</div>
-          <div class="product-foot">
-            <span class="product-pack">113 g · 4 oz</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="grease">
-        <div class="product-img">
-          <img src="images/grease-multi-2pk-50g.jpg" alt="LVAP Multi-Purpose Silicone Grease 2 x 50g" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Silicone Grease</div>
-          <div class="product-name">Multi-Purpose Silicone Grease — 2-Pack</div>
-          <div class="product-desc">Two-pack food-grade silicone grease, waterproof and dielectric for water and electrical systems.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 × 50 g</span>
-            <a href="https://www.amazon.com/dp/B0GTN4KYND" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ DISPENSER KEYS ============ -->
-      <article class="product reveal" data-category="keys" id="cat-keys">
-        <div class="product-img">
-          <span class="product-tag teal">Most Popular</span>
-          <img src="images/keyset-restroom-s-7pc.jpg" alt="Restroom Dispenser Key Set 7pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Restroom Dispenser Key Set</div>
-          <div class="product-desc">Master set for paper towel, toilet paper, and soap dispensers.</div>
-          <div class="product-foot">
-            <span class="product-pack">7 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-restroom-s-9pc.jpg" alt="Restroom Dispenser Key Set 9pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Restroom Dispenser Key Set — Extended</div>
-          <div class="product-desc">Extended master set covering nine common dispenser types.</div>
-          <div class="product-foot">
-            <span class="product-pack">9 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-restroom-7pc.jpg" alt="Restroom Keyset 7pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Restroom Keyset — Standard</div>
-          <div class="product-desc">Original seven-key set for most common dispenser brands.</div>
-          <div class="product-foot">
-            <span class="product-pack">7 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-restroom-9pc.jpg" alt="Restroom Keyset 9pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Restroom Keyset — Extended</div>
-          <div class="product-desc">Nine-piece set with additional compartments.</div>
-          <div class="product-foot">
-            <span class="product-pack">9 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <span class="product-tag">Pro Pack</span>
-          <img src="images/keyset-restroom-mix-18pc.jpg" alt="Restroom Keyset 18pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Restroom Keyset — Pro Master</div>
-          <div class="product-desc">Largest available set. Covers nearly any commercial dispenser.</div>
-          <div class="product-foot">
-            <span class="product-pack">18 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-cat74-10pc.jpg" alt="CAT 74 Dispenser Keyset" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">CAT 74 Dispenser Key Set</div>
-          <div class="product-desc">CAT-74 compatible commercial dispenser keys.</div>
-          <div class="product-foot">
-            <span class="product-pack">10 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-waff-10pc.jpg" alt="Waffle Dispenser Keyset" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Dispenser Keys</div>
-          <div class="product-name">Waffle Dispenser Key Set</div>
-          <div class="product-desc">Waffle-pattern dispenser keys, 10-piece commercial set.</div>
-          <div class="product-foot">
-            <span class="product-pack">10 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ MOUSE BAIT STATION KEYS ============ -->
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-mouse-mix-4pc.jpg" alt="Mouse Bait Station Keys 4pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Mouse Bait Station Keys — Mix</div>
-          <div class="product-desc">Replacement keys for major bait station brands.</div>
-          <div class="product-foot">
-            <span class="product-pack">4 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-mouse-mix-4pc-kc.jpg" alt="Mouse Bait Station Keys 4pc with rings" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Bait Station Keys + Key Rings</div>
-          <div class="product-desc">Four keys with key rings and warning stickers included.</div>
-          <div class="product-foot">
-            <span class="product-pack">4 pcs + KC</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-mouse-mix-8pc.jpg" alt="Mouse Bait Station Keys 8pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Mouse Bait Station Keys — Pro Mix</div>
-          <div class="product-desc">Eight-piece replacement set for pest control professionals.</div>
-          <div class="product-foot">
-            <span class="product-pack">8 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-mouse-mix-8pc-kc.jpg" alt="Mouse Bait Station Keys 8pc with rings" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Pro Bait Keys + Key Rings</div>
-          <div class="product-desc">Eight keys with key rings and bilingual warning stickers.</div>
-          <div class="product-foot">
-            <span class="product-pack">8 pcs + KC</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-aegis-2pc.jpg" alt="Aegis Bait Station Keys 2pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Aegis Replacement Keys</div>
-          <div class="product-desc">Aegis-compatible bait station replacement keys.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-bell-2pc.jpg" alt="Bell Bait Station Keys 2pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Bell Replacement Keys</div>
-          <div class="product-desc">Bell Labs-compatible bait station replacement keys.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-ezfbs-2pc.jpg" alt="EZ FBS Bait Station Keys 2pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">EZ-FBS Replacement Keys</div>
-          <div class="product-desc">EZ-FBS / fly bait station compatible keys.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-pevo-2pc.jpg" alt="Protecta Evo Bait Station Keys 2pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Bait Station Keys</div>
-          <div class="product-name">Protecta Evo Replacement Keys</div>
-          <div class="product-desc">Protecta Evo bait station compatible keys.</div>
-          <div class="product-foot">
-            <span class="product-pack">2 pieces</span>
-            <a href="https://www.amazon.com/stores/page/2449504E-D60C-42A1-B336-D360D8B9F1D6" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ============ HEAVY EQUIPMENT KEYS ============ -->
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-heavy-12pc.jpg" alt="Heavy Equipment Master Key Set 12pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Heavy Equipment Keys</div>
-          <div class="product-name">Heavy Equipment Master Key Set</div>
-          <div class="product-desc">Twelve-piece multi-brand heavy equipment ignition key set for operators.</div>
-          <div class="product-foot">
-            <span class="product-pack">12 pieces</span>
-            <a href="https://www.amazon.com/dp/B0H71YNWH8" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-heavy-16pc.jpg" alt="Heavy Equipment Master Key Set 16pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Heavy Equipment Keys</div>
-          <div class="product-name">Heavy Equipment Master Key Set</div>
-          <div class="product-desc">Sixteen-piece heavy equipment master key set for construction machinery operators.</div>
-          <div class="product-foot">
-            <span class="product-pack">16 pieces</span>
-            <a href="https://www.amazon.com/dp/B0H71QFY9Y" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-heavy-39pc.jpg" alt="Heavy Equipment Master Key Set 39pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Heavy Equipment Keys</div>
-          <div class="product-name">Heavy Equipment Master Key Set</div>
-          <div class="product-desc">Thirty-nine-piece heavy equipment master key set for excavators, loaders and lifts.</div>
-          <div class="product-foot">
-            <span class="product-pack">39 pieces</span>
-            <a href="https://www.amazon.com/dp/B0H71VRPD1" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <img src="images/keyset-heavy-50pc.jpg" alt="Heavy Equipment Master Key Set 50pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Heavy Equipment Keys</div>
-          <div class="product-name">Heavy Equipment Master Key Set</div>
-          <div class="product-desc">Fifty-piece heavy equipment master key set covering major machinery brands.</div>
-          <div class="product-foot">
-            <span class="product-pack">50 pieces</span>
-            <a href="https://www.amazon.com/dp/B0H71V2FM7" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product reveal" data-category="keys">
-        <div class="product-img">
-          <span class="product-tag">Bulk</span>
-          <img src="images/keyset-heavy-67pc.jpg" alt="Heavy Equipment Master Key Set 67pc" loading="lazy">
-        </div>
-        <div class="product-body">
-          <div class="product-cat">Heavy Equipment Keys</div>
-          <div class="product-name">Heavy Equipment Master Key Set</div>
-          <div class="product-desc">Sixty-seven-piece heavy equipment master key set for mixed machinery fleets.</div>
-          <div class="product-foot">
-            <span class="product-pack">67 pieces</span>
-            <a href="https://www.amazon.com/dp/B0H72F21VB" target="_blank" rel="noopener" class="buy-btn">Buy</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</main>
 
 <!-- AMERICAN OWNED STRIP -->
 <section class="american-strip">
@@ -1578,11 +792,11 @@
       <div>
         <h4>Shop</h4>
         <ul>
-          <li><a href="#cat-screens">Urinal Screens</a></li>
-          <li><a href="#cat-mats">Urinal Mats</a></li>
-          <li><a href="#cat-descaler">Descalers</a></li>
-          <li><a href="#cat-grease">Silicone Grease</a></li>
-          <li><a href="#cat-keys">Keys & Tools</a></li>
+          <li><a href="products.html?filter=screens">Urinal Screens</a></li>
+          <li><a href="products.html?filter=mats">Urinal Mats</a></li>
+          <li><a href="products.html?filter=descaler">Descalers</a></li>
+          <li><a href="products.html?filter=grease">Silicone Grease</a></li>
+          <li><a href="products.html?filter=keys">Keys & Tools</a></li>
         </ul>
       </div>
       <div>
@@ -1606,60 +820,24 @@
 </footer>
 
 <script>
-  // ============ CATEGORY FILTERING ============
-  const cards = document.querySelectorAll('.cat-card');
-  const products = document.querySelectorAll('.product');
-  const status = document.getElementById('filterStatus');
-
-  function applyFilter(filter) {
-    let count = 0;
-    products.forEach(p => {
-      const show = (filter === 'all') || (p.dataset.category === filter);
-      p.style.display = show ? '' : 'none';
-      if (show) count++;
-    });
-    status.textContent = `Showing ${count} product${count !== 1 ? 's' : ''}` +
-      (filter === 'all' ? '' : ` in ${filter}`);
-  }
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      applyFilter(card.dataset.filter);
-      document.getElementById('all').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // ============ PRODUCTS DROPDOWN — MOBILE TAP TO TOGGLE ============
+  document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      // On touch devices, first tap opens the dropdown instead of navigating.
+      const dd = trigger.parentElement;
+      const isOpen = dd.classList.contains('open');
+      if (window.matchMedia('(hover: none)').matches && !isOpen) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
+        dd.classList.add('open');
+      }
     });
   });
-
-  // ============ CATEGORY TILES → FILTER + SCROLL ============
-  document.querySelectorAll('.cat-tile[data-jump]').forEach(tile => {
-    tile.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = tile.dataset.jump;
-      cards.forEach(c => c.classList.toggle('active', c.dataset.filter === target));
-      applyFilter(target);
-      document.getElementById('all').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // ============ REVEAL ON SCROLL ============
-  try {
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
-        });
-      }, { rootMargin: '0px 0px -50px 0px' });
-      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-    } else {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
     }
-  } catch (e) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-  }
+  });
 </script>
 
 </body>
