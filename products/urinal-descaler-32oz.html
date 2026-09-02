@@ -172,7 +172,9 @@
     gap: 50px;
     align-items: start;
   }
-  .product-gallery {
+  /* Gallery: main image + thumbnail strip */
+  .gallery { display: flex; flex-direction: column; gap: 12px; }
+  .gallery-main {
     background: var(--gray-50);
     border: 1px solid var(--gray-100);
     border-radius: 12px;
@@ -182,9 +184,16 @@
     justify-content: center;
     padding: 40px;
     position: relative;
+    overflow: hidden;
   }
-  .product-gallery img { max-height: 100%; width: auto; object-fit: contain; }
-  .product-gallery .badge {
+  .gallery-main img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.2s;
+  }
+  .gallery-main .badge {
     position: absolute;
     top: 16px;
     left: 16px;
@@ -197,7 +206,29 @@
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    z-index: 1;
   }
+  .gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+  }
+  .gallery-thumb {
+    background: var(--gray-50);
+    border: 2px solid var(--gray-100);
+    border-radius: 8px;
+    aspect-ratio: 1;
+    padding: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .gallery-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .gallery-thumb:hover { border-color: var(--teal); transform: translateY(-2px); }
+  .gallery-thumb.active { border-color: var(--teal); background: white; }
 
   .product-info .breadcrumb-cat {
     font-family: 'Barlow Condensed', sans-serif;
@@ -225,9 +256,31 @@
     font-size: 14px;
     color: var(--gray-600);
   }
-  .rating-summary .stars { color: #f5a623; font-size: 18px; letter-spacing: -1px; }
   .rating-summary .num { font-weight: 700; color: var(--ink); }
   .rating-summary a { color: var(--teal-dark); font-weight: 600; }
+
+  /* Fractional star rating widget */
+  .star-rating {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #dcdfe1;
+    font-family: Arial, sans-serif;
+  }
+  .star-rating::before { content: "★★★★★"; }
+  .star-rating .fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #f5a623;
+    white-space: nowrap;
+  }
+  .star-rating .fill::before { content: "★★★★★"; }
+  .star-rating.lg { font-size: 26px; }
+  .star-rating.sm { font-size: 15px; }
 
   .product-price {
     font-family: 'Barlow Condensed', sans-serif;
@@ -412,13 +465,6 @@
     line-height: 1;
     color: var(--ink);
   }
-  .reviews-summary .rating-detail .stars-lg {
-    color: #f5a623;
-    font-size: 20px;
-    letter-spacing: -1px;
-    display: block;
-    margin-bottom: 4px;
-  }
   .reviews-summary .rating-detail small {
     display: block;
     font-size: 12px;
@@ -441,7 +487,7 @@
     display: flex;
     flex-direction: column;
   }
-  .review-card .r-stars { color: #f5a623; font-size: 15px; letter-spacing: -1px; margin-bottom: 8px; }
+  .review-card .r-stars { margin-bottom: 8px; }
   .review-card .r-title {
     font-weight: 700;
     font-size: 14px;
@@ -588,9 +634,25 @@
   <div class="container">
     <div class="product-hero-grid">
 
-      <div class="product-gallery">
-        <span class="badge">Heavy Duty</span>
-        <img src="../images/descaler-1pk.jpg" alt="LVAP Heavy Duty Urinal Descaler 32 fl oz">
+      <div class="gallery">
+        <div class="gallery-main">
+          <span class="badge">Heavy Duty</span>
+          <img id="galleryMain" src="../images/descaler-1pk.jpg" alt="LVAP Heavy Duty Urinal Descaler 32 fl oz">
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs">
+          <div class="gallery-thumb active" data-src="../images/descaler-1pk.jpg" data-alt="LVAP Heavy Duty Urinal Descaler 32 fl oz">
+            <img src="../images/descaler-1pk.jpg" alt="32oz bottle">
+          </div>
+          <div class="gallery-thumb" data-src="../images/descaler-4pk.jpg" data-alt="LVAP Urinal Descaler 4-Pack">
+            <img src="../images/descaler-4pk.jpg" alt="4-pack">
+          </div>
+          <div class="gallery-thumb" data-src="../images/descaler-6pk.jpg" data-alt="LVAP Urinal Descaler 6-Pack">
+            <img src="../images/descaler-6pk.jpg" alt="6-pack">
+          </div>
+          <div class="gallery-thumb" data-src="../images/descaler-12pk.jpg" data-alt="LVAP Urinal Descaler 12-Pack">
+            <img src="../images/descaler-12pk.jpg" alt="12-pack">
+          </div>
+        </div>
       </div>
 
       <div class="product-info">
@@ -598,7 +660,7 @@
         <h1>Heavy Duty Urinal Descaler — 32oz</h1>
 
         <div class="rating-summary">
-          <span class="stars">★★★★☆</span>
+          <span class="star-rating" title="4.4 out of 5 (44 reviews)"><span class="fill" style="width:90%"></span></span>
           <span class="num">4.4</span>
           <span>·</span>
           <a href="https://www.amazon.com/product-reviews/B0FLZW8NN1" target="_blank" rel="noopener">44 reviews on Amazon</a>
@@ -703,7 +765,7 @@
       <div class="reviews-summary">
         <div class="big-rating">4.4</div>
         <div class="rating-detail">
-          <span class="stars-lg">★★★★☆</span>
+          <span class="star-rating lg" style="display:block;margin-bottom:4px" title="4.4 out of 5"><span class="fill" style="width:90%"></span></span>
           <small>Based on 44 Amazon reviews</small>
         </div>
       </div>
@@ -712,7 +774,7 @@
     <div class="review-grid">
 
       <div class="review-card">
-        <div class="r-stars">★★★★★</div>
+        <div class="r-stars"><span class="star-rating sm"><span class="fill" style="width:100%"></span></span></div>
         <div class="r-title">Cleared years of buildup</div>
         <div class="r-body">
           "Poured it into two urinals that had years of caked-on scale. Left it sit
@@ -723,7 +785,7 @@
       </div>
 
       <div class="review-card">
-        <div class="r-stars">★★★★★</div>
+        <div class="r-stars"><span class="star-rating sm"><span class="fill" style="width:100%"></span></span></div>
         <div class="r-title">Works, no headache from fumes</div>
         <div class="r-body">
           "Every other industrial descaler I've used stings your eyes for hours.
@@ -734,7 +796,7 @@
       </div>
 
       <div class="review-card">
-        <div class="r-stars">★★★★☆</div>
+        <div class="r-stars"><span class="star-rating sm"><span class="fill" style="width:80%"></span></span></div>
         <div class="r-title">Standard product does what it says</div>
         <div class="r-body">
           "Nothing fancy, does the job. We use it monthly on our restroom floor
@@ -807,6 +869,23 @@
 </footer>
 
 <script>
+  // Gallery: thumbnail click swaps the main image
+  (function() {
+    const main = document.getElementById('galleryMain');
+    document.querySelectorAll('#galleryThumbs .gallery-thumb').forEach(t => {
+      t.addEventListener('click', () => {
+        document.querySelectorAll('#galleryThumbs .gallery-thumb').forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        main.style.opacity = '0';
+        setTimeout(() => {
+          main.src = t.dataset.src;
+          main.alt = t.dataset.alt;
+          main.style.opacity = '1';
+        }, 100);
+      });
+    });
+  })();
+
   // Mobile-tap-to-open dropdown
   document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
