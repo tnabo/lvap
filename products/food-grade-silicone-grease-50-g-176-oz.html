@@ -150,6 +150,56 @@
   @media (max-width: 540px) {
     .foot-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============ ALSO AVAILABLE (PACK VARIANTS) ============ */
+  .also-avail {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .also-avail h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-600);
+    margin-bottom: 14px;
+  }
+  .also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+  }
+  .also-tile {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: 8px;
+    transition: border-color 0.15s, transform 0.15s;
+    color: var(--ink);
+  }
+  .also-tile:hover { border-color: var(--teal); transform: translateY(-2px); text-decoration: none; }
+  .also-tile.current { border-color: var(--teal); background: var(--gray-50); }
+  .also-tile img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 6px; }
+  .also-tile .pack {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+
+  .prose { max-width: 780px; font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+  .prose p { margin-bottom: 14px; }
+  .prose ul { padding-left: 22px; margin-bottom: 14px; }
+  .prose li { margin-bottom: 6px; }
+  .prose strong { color: var(--ink); }
+
 </style>
 </head>
 <body>
@@ -228,6 +278,24 @@
             <dt>Fulfillment</dt><dd>Ships from Amazon</dd>
           </dl>
         </div>
+
+        <div class="also-avail">
+          <h3>Also available in this line</h3>
+          <div class="also-grid">
+      <a href="../products/food-grade-silicone-grease-50-g-176-oz.html" class="also-tile current">
+        <img src="../images/grease-blue-50g.jpg" alt="50 g · 1.76 oz">
+        <span class="pack">50 g · 1.76 oz</span>
+      </a>
+      <a href="../products/high-temp-silicone-grease-red-113-g-4-oz.html" class="also-tile ">
+        <img src="../images/grease-red-113g.jpg" alt="113 g · 4 oz">
+        <span class="pack">113 g · 4 oz</span>
+      </a>
+      <a href="../products/multi-purpose-silicone-grease-2-pack-2-50-g.html" class="also-tile ">
+        <img src="../images/grease-multi-2pk-50g.jpg" alt="2 × 50 g">
+        <span class="pack">2 × 50 g</span>
+      </a>
+          </div>
+        </div>
         <div class="buy-row">
           <a href="https://www.amazon.com/dp/B0G3X7Y2KC" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>
           <a href="../sds/silicone-grease-food-grade.pdf" target="_blank" rel="noopener" class="btn-secondary">📄  Safety Data Sheet</a>
@@ -262,6 +330,22 @@
         <h3>Multi-Purpose</h3>
         <p>One tube covers plumbing, food equipment, electrical contacts, and rubber seals.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section white">
+  <div class="container">
+    <h2 class="section-title"><span class="bar"></span>How to Use</h2>
+    <div class="prose">
+      <p>Application guidance and safety information are on the tube and in the <a href="../sds/silicone-grease-food-grade.pdf" target="_blank" rel="noopener">Safety Data Sheet</a>. Quick summary:</p>
+      <ul>
+        <li><strong>Where to use:</strong> Faucet stems, O-rings, gaskets, valves, threaded fittings, pump seals, electrical contacts.</li>
+        <li><strong>How to apply:</strong> Clean the surface, apply a thin, even layer, reassemble. A little goes a long way.</li>
+        <li><strong>Temperature range:</strong> Stays effective across a wide temperature range — suitable for cold storage and hot water lines.</li>
+        <li><strong>Food-contact safe:</strong> NSF H1 certified — approved for incidental food contact in food-service environments.</li>
+      </ul>
+      <p>Do not mix with bleach or other cleaners. Keep out of reach of children.</p>
     </div>
   </div>
 </section>

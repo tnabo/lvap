@@ -150,6 +150,56 @@
   @media (max-width: 540px) {
     .foot-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============ ALSO AVAILABLE (PACK VARIANTS) ============ */
+  .also-avail {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .also-avail h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-600);
+    margin-bottom: 14px;
+  }
+  .also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+  }
+  .also-tile {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: 8px;
+    transition: border-color 0.15s, transform 0.15s;
+    color: var(--ink);
+  }
+  .also-tile:hover { border-color: var(--teal); transform: translateY(-2px); text-decoration: none; }
+  .also-tile.current { border-color: var(--teal); background: var(--gray-50); }
+  .also-tile img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 6px; }
+  .also-tile .pack {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+
+  .prose { max-width: 780px; font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+  .prose p { margin-bottom: 14px; }
+  .prose ul { padding-left: 22px; margin-bottom: 14px; }
+  .prose li { margin-bottom: 6px; }
+  .prose strong { color: var(--ink); }
+
 </style>
 </head>
 <body>
@@ -227,6 +277,32 @@
             <dt>Category</dt>   <dd><a href="../products.html?filter=screens">Urinal Screens</a></dd>
             <dt>Fulfillment</dt><dd>Ships from Amazon</dd>
           </dl>
+        </div>
+
+        <div class="also-avail">
+          <h3>Also available in this line</h3>
+          <div class="also-grid">
+      <a href="../products/urinal-screen-deodorizer-gloves-black-12-pack-12-gloves.html" class="also-tile ">
+        <img src="../images/screen-black-gloves-12pk.jpg" alt="12-Pack (+12 gloves)">
+        <span class="pack">12-Pack (+12 gloves)</span>
+      </a>
+      <a href="../products/urinal-screen-deodorizer-gloves-blue-12-pack-12-gloves.html" class="also-tile current">
+        <img src="../images/screen-blue-gloves-12pk.jpg" alt="12-Pack (+12 gloves)">
+        <span class="pack">12-Pack (+12 gloves)</span>
+      </a>
+      <a href="../products/urinal-screen-deodorizer-gloves-orange-12-pack-12-gloves.html" class="also-tile ">
+        <img src="../images/screen-orange-gloves-12pk.jpg" alt="12-Pack (+12 gloves)">
+        <span class="pack">12-Pack (+12 gloves)</span>
+      </a>
+      <a href="../products/urinal-screen-deodorizer-gloves-transparent-12-pack-12-gloves.html" class="also-tile ">
+        <img src="../images/screen-clear-gloves-12pk.jpg" alt="12-Pack (+12 gloves)">
+        <span class="pack">12-Pack (+12 gloves)</span>
+      </a>
+      <a href="../products/urinal-screen-variety-gloves-3-colors-24-pack-24-gloves.html" class="also-tile ">
+        <img src="../images/screen-variety-24pk.jpg" alt="24-Pack (+24 gloves)">
+        <span class="pack">24-Pack (+24 gloves)</span>
+      </a>
+          </div>
         </div>
         <div class="buy-row">
           <a href="https://www.amazon.com/dp/B0FX9XWH2K" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>

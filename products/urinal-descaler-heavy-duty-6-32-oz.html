@@ -150,6 +150,56 @@
   @media (max-width: 540px) {
     .foot-grid { grid-template-columns: 1fr; }
   }
+
+  /* ============ ALSO AVAILABLE (PACK VARIANTS) ============ */
+  .also-avail {
+    background: white;
+    border: 1px solid var(--gray-100);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .also-avail h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-600);
+    margin-bottom: 14px;
+  }
+  .also-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+  }
+  .also-tile {
+    display: block;
+    text-align: center;
+    padding: 8px;
+    border: 1.5px solid var(--gray-100);
+    border-radius: 8px;
+    transition: border-color 0.15s, transform 0.15s;
+    color: var(--ink);
+  }
+  .also-tile:hover { border-color: var(--teal); transform: translateY(-2px); text-decoration: none; }
+  .also-tile.current { border-color: var(--teal); background: var(--gray-50); }
+  .also-tile img { width: 100%; aspect-ratio: 1; object-fit: contain; margin-bottom: 6px; }
+  .also-tile .pack {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+  }
+
+  .prose { max-width: 780px; font-size: 15px; color: var(--gray-700); line-height: 1.75; }
+  .prose p { margin-bottom: 14px; }
+  .prose ul { padding-left: 22px; margin-bottom: 14px; }
+  .prose li { margin-bottom: 6px; }
+  .prose strong { color: var(--ink); }
+
 </style>
 </head>
 <body>
@@ -228,6 +278,28 @@
             <dt>Fulfillment</dt><dd>Ships from Amazon</dd>
           </dl>
         </div>
+
+        <div class="also-avail">
+          <h3>Also available in this line</h3>
+          <div class="also-grid">
+      <a href="../products/urinal-descaler-32oz.html" class="also-tile ">
+        <img src="../images/descaler-1pk.jpg" alt="1 × 32 oz">
+        <span class="pack">1 × 32 oz</span>
+      </a>
+      <a href="../products/urinal-descaler-heavy-duty-4-32-oz.html" class="also-tile ">
+        <img src="../images/descaler-4pk.jpg" alt="4 × 32 oz">
+        <span class="pack">4 × 32 oz</span>
+      </a>
+      <a href="../products/urinal-descaler-heavy-duty-6-32-oz.html" class="also-tile current">
+        <img src="../images/descaler-6pk.jpg" alt="6 × 32 oz">
+        <span class="pack">6 × 32 oz</span>
+      </a>
+      <a href="../products/urinal-descaler-heavy-duty-12-32-oz.html" class="also-tile ">
+        <img src="../images/descaler-12pk.jpg" alt="12 × 32 oz">
+        <span class="pack">12 × 32 oz</span>
+      </a>
+          </div>
+        </div>
         <div class="buy-row">
           <a href="https://www.amazon.com/dp/B0G64WS8YZ" target="_blank" rel="noopener" class="btn-amazon">Buy on Amazon →</a>
           <a href="../sds/urinal-descaler.pdf" target="_blank" rel="noopener" class="btn-secondary">📄  Safety Data Sheet</a>
@@ -262,6 +334,22 @@
         <h3>Commercial Grade</h3>
         <p>Concentrated industrial-strength formula built for high-traffic restrooms.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section white">
+  <div class="container">
+    <h2 class="section-title"><span class="bar"></span>How to Use</h2>
+    <div class="prose">
+      <p>Full instructions and safety warnings are on the bottle label and in the <a href="../sds/urinal-descaler.pdf" target="_blank" rel="noopener">Safety Data Sheet</a>. Quick summary:</p>
+      <ul>
+        <li><strong>PPE:</strong> Wear chemical-resistant gloves and eye protection.</li>
+        <li><strong>Application:</strong> Pour directly into the urinal bowl or drain. Let it sit for the dwell time on the label so it can break down the scale.</li>
+        <li><strong>Rinse:</strong> Flush thoroughly with water.</li>
+        <li><strong>Cadence:</strong> Weekly for heavy-traffic restrooms, monthly for lighter use.</li>
+      </ul>
+      <p>Do not mix with bleach or other cleaners. Keep out of reach of children.</p>
     </div>
   </div>
 </section>
