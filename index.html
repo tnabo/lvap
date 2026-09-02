@@ -652,6 +652,155 @@
   @media (prefers-reduced-motion: reduce) {
     .js .reveal { opacity: 1; transform: none; transition: none; }
   }
+
+  /* ============ MOBILE MENU + RESPONSIVE TYPOGRAPHY (v2) ============ */
+  .menu-toggle {
+    display: none;
+    background: transparent;
+    border: 2px solid var(--gray-200);
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    color: var(--ink);
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-toggle:hover { border-color: var(--teal); }
+  .menu-toggle .bars {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 22px;
+  }
+  .menu-toggle .bar {
+    height: 2.5px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  @media (max-width: 900px) {
+    /* Show hamburger */
+    .menu-toggle { display: flex; }
+
+    /* Header keeps just logo + hamburger */
+    .header-inner { flex-wrap: nowrap; gap: 12px; }
+    .logo-text { display: none; }
+    .logo-mark { height: 30px; }
+
+    /* Nav becomes a slide-down drawer */
+    header { position: sticky; }
+    nav.main-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      align-items: stretch;
+      background: white;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 8px;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      display: none;
+      order: 0;
+      width: auto;
+      box-shadow: 0 12px 24px rgba(15,32,36,0.12);
+      z-index: 100;
+    }
+    nav.main-nav.open { display: flex; }
+    nav.main-nav > a {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      border-bottom: 1px solid var(--gray-100);
+      border-radius: 0;
+      text-align: left;
+    }
+    nav.main-nav > .nav-dropdown {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    nav.main-nav .nav-dropdown > a {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      border-radius: 0;
+      display: block;
+    }
+    nav.main-nav > a.header-cta,
+    nav.main-nav > .header-cta {
+      background: var(--ink);
+      color: white !important;
+      margin-top: 8px;
+      border-radius: 6px;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    /* Products dropdown → accordion on mobile */
+    .nav-menu {
+      position: static;
+      background: var(--gray-50);
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+      min-width: 0;
+    }
+    /* Don't auto-open on hover on mobile — accordion only */
+    .nav-dropdown:hover .nav-menu,
+    .nav-dropdown:focus-within .nav-menu {
+      max-height: 0;
+    }
+    .nav-dropdown.open .nav-menu {
+      max-height: 700px;
+    }
+    .nav-menu a {
+      padding: 14px 24px;
+      font-size: 14px;
+      border-radius: 0;
+    }
+    .nav-menu-divider { display: none; }
+
+    /* Body font up for readability */
+    body { font-size: 16px; }
+    p, .product-desc, .product-lead { font-size: 15px; }
+
+    /* Product card tweaks */
+    .product-name { font-size: 15px !important; }
+    .product-desc { display: block !important; font-size: 14px; }
+    .buy-btn { font-size: 13px; padding: 11px 16px; }
+
+    /* Forms — prevent iOS zoom on focus */
+    .form-row input,
+    .form-row select,
+    .form-row textarea { font-size: 16px; }
+    .form-submit { width: 100%; padding: 16px 24px; font-size: 15px; }
+
+    /* Buttons in product detail page hero */
+    .btn-amazon, .btn-secondary { padding: 14px 20px; font-size: 14px; }
+    .buy-row { flex-direction: column; gap: 10px; }
+    .buy-row .btn-amazon, .buy-row .btn-secondary { justify-content: center; }
+
+    /* Section titles smaller on mobile */
+    .section-title { font-size: 24px; }
+    .page-header h1 { font-size: 32px; }
+  }
+
 </style>
 </head>
 <body>
@@ -678,6 +827,9 @@
         <small>Products</small>
       </div>
     </a>
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <div class="bars"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </button>
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <div class="nav-dropdown">
@@ -842,24 +994,46 @@
 </footer>
 
 <script>
-  // ============ PRODUCTS DROPDOWN — MOBILE TAP TO TOGGLE ============
-  document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
-    trigger.addEventListener('click', (e) => {
-      // On touch devices, first tap opens the dropdown instead of navigating.
-      const dd = trigger.parentElement;
-      const isOpen = dd.classList.contains('open');
-      if (window.matchMedia('(hover: none)').matches && !isOpen) {
-        e.preventDefault();
+  // ============ MOBILE MENU + DROPDOWN ============
+  (function() {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav.main-nav');
+    const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+
+    if (toggle && nav) {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const open = !nav.classList.contains('open');
+        nav.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.header-inner')) {
+          nav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    document.querySelectorAll('.nav-dropdown > a').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        const dd = trigger.parentElement;
+        if (isMobile()) {
+          e.preventDefault();
+          dd.classList.toggle('open');
+        } else if (window.matchMedia('(hover: none)').matches && !dd.classList.contains('open')) {
+          e.preventDefault();
+          document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
+          dd.classList.add('open');
+        }
+      });
+    });
+    document.addEventListener('click', (e) => {
+      if (!isMobile() && !e.target.closest('.nav-dropdown')) {
         document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
-        dd.classList.add('open');
       }
     });
-  });
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.open').forEach(o => o.classList.remove('open'));
-    }
-  });
+  })();
 </script>
 
 </body>
