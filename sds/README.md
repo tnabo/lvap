@@ -2,17 +2,13 @@
 
 This folder holds the PDF Safety Data Sheets that are linked from the site footer.
 
-## Expected files
-
-The footer "Documents" section on every page links to these exact filenames — drop the PDFs
-in here with these names and the links will work:
+## Files
 
 | Filename                          | Product it covers                        |
 | --------------------------------- | ---------------------------------------- |
 | `urinal-descaler.pdf`             | Heavy Duty Urinal Descaler / Salt Remover (all pack sizes) |
 | `toilet-bowl-descaler.pdf`        | Heavy Duty Toilet Bowl Descaler (all pack sizes)           |
-| `silicone-grease-food-grade.pdf`  | Food-Grade Silicone Grease 50g            |
-| `silicone-grease-high-temp.pdf`   | High-Temp Silicone Grease 113g (Red)      |
+| `silicone-grease-food-grade.pdf`  | Food-Grade Silicone Grease (all pack sizes) |
 
 ## Adding a new SDS
 
