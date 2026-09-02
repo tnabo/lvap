@@ -692,7 +692,8 @@
           <div class="nav-menu-divider"></div>
           <a href="products.html?filter=screens">Urinal Screens</a>
           <a href="products.html?filter=mats">Urinal Mats</a>
-          <a href="products.html?filter=descaler">Descalers</a>
+          <a href="products.html?filter=descaler-urinal">Urinal Descaler</a>
+          <a href="products.html?filter=descaler-toilet">Toilet Bowl Descaler</a>
           <a href="products.html?filter=grease">Silicone Grease</a>
           <a href="products.html?filter=keys-dispenser">Dispenser Keys</a>
           <a href="products.html?filter=keys-bait">Bait Station Keys</a>
@@ -993,7 +994,7 @@
       </article>
 
       <!-- ============ DESCALER ============ -->
-      <article class="product reveal" data-category="descaler" id="cat-descaler">
+      <article class="product reveal" data-category="descaler-urinal" id="cat-descaler">
         <div class="product-img">
           <span class="product-tag orange">Heavy Duty</span>
           <img src="images/descaler-1pk.jpg" alt="LVAP Urinal Descaler 32oz" loading="lazy">
@@ -1009,7 +1010,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-urinal">
         <div class="product-img">
           <img src="images/descaler-4pk.jpg" alt="LVAP Urinal Descaler 4-Pack" loading="lazy">
         </div>
@@ -1024,7 +1025,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-urinal">
         <div class="product-img">
           <img src="images/descaler-6pk.jpg" alt="LVAP Urinal Descaler 6-Pack" loading="lazy">
         </div>
@@ -1039,7 +1040,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-urinal">
         <div class="product-img">
           <span class="product-tag">Bulk</span>
           <img src="images/descaler-12pk.jpg" alt="LVAP Urinal Descaler 12-Pack" loading="lazy">
@@ -1055,7 +1056,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <img src="images/descaler-toilet-1pk.jpg" alt="LVAP Toilet Bowl Descaler 32oz" loading="lazy">
         </div>
@@ -1070,7 +1071,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <img src="images/descaler-toilet-2pk.jpg" alt="LVAP Toilet Bowl Descaler 2-Pack" loading="lazy">
         </div>
@@ -1085,7 +1086,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <img src="images/descaler-toilet-3pk.jpg" alt="LVAP Toilet Bowl Descaler 3-Pack" loading="lazy">
         </div>
@@ -1100,7 +1101,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <img src="images/descaler-toilet-4pk.jpg" alt="LVAP Toilet Bowl Descaler 4-Pack" loading="lazy">
         </div>
@@ -1115,7 +1116,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <img src="images/descaler-toilet-6pk.jpg" alt="LVAP Toilet Bowl Descaler 6-Pack" loading="lazy">
         </div>
@@ -1130,7 +1131,7 @@
         </div>
       </article>
 
-      <article class="product reveal" data-category="descaler">
+      <article class="product reveal" data-category="descaler-toilet">
         <div class="product-img">
           <span class="product-tag">Bulk</span>
           <img src="images/descaler-toilet-12pk.jpg" alt="LVAP Toilet Bowl Descaler 12-Pack" loading="lazy">
@@ -1564,7 +1565,8 @@
         <ul>
           <li><a href="products.html?filter=screens">Urinal Screens</a></li>
           <li><a href="products.html?filter=mats">Urinal Mats</a></li>
-          <li><a href="products.html?filter=descaler">Descalers</a></li>
+          <li><a href="products.html?filter=descaler-urinal">Urinal Descaler</a>
+          <a href="products.html?filter=descaler-toilet">Toilet Bowl Descaler</a></li>
           <li><a href="products.html?filter=grease">Silicone Grease</a></li>
           <li><a href="products.html?filter=keys-dispenser">Dispenser Keys</a></li>
           <li><a href="products.html?filter=keys-bait">Bait Station Keys</a></li>
@@ -1609,14 +1611,15 @@
 
   // Filter key → display name for heading + status
   const LABELS = {
-    'all':              'The Catalog',
-    'screens':          'Urinal Screens',
-    'mats':             'Urinal Mats',
-    'descaler':         'Descalers',
-    'grease':           'Silicone Grease',
-    'keys-dispenser':   'Dispenser Keys',
-    'keys-bait':        'Bait Station Keys',
-    'keys-construction':'Construction Keys',
+    'all':               'The Catalog',
+    'screens':           'Urinal Screens',
+    'mats':              'Urinal Mats',
+    'descaler-urinal':   'Urinal Descaler',
+    'descaler-toilet':   'Toilet Bowl Descaler',
+    'grease':            'Silicone Grease',
+    'keys-dispenser':    'Dispenser Keys',
+    'keys-bait':         'Bait Station Keys',
+    'keys-construction': 'Construction Keys',
   };
 
   function applyFilter(filter) {

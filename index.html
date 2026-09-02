@@ -229,30 +229,33 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    background: var(--gray-100);
-    transition: transform 0.25s, box-shadow 0.25s;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
   }
-  .cat-tile:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(15,32,36,0.15); text-decoration: none; }
+  .cat-tile:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(15,32,36,0.15); border-color: var(--teal); text-decoration: none; }
   .cat-tile img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 22px;
     transition: transform 0.4s;
   }
   .cat-tile:hover img { transform: scale(1.05); }
   .cat-tile-label {
     position: absolute;
-    left: 14px;
-    bottom: 14px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--ink);
     color: white;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 8px 14px;
-    border-radius: 4px;
+    padding: 12px 14px;
+    text-align: center;
   }
 
   /* ============ ABOUT BLOCK ============ */
@@ -684,7 +687,8 @@
           <div class="nav-menu-divider"></div>
           <a href="products.html?filter=screens">Urinal Screens</a>
           <a href="products.html?filter=mats">Urinal Mats</a>
-          <a href="products.html?filter=descaler">Descalers</a>
+          <a href="products.html?filter=descaler-urinal">Urinal Descaler</a>
+          <a href="products.html?filter=descaler-toilet">Toilet Bowl Descaler</a>
           <a href="products.html?filter=grease">Silicone Grease</a>
           <a href="products.html?filter=keys-dispenser">Dispenser Keys</a>
           <a href="products.html?filter=keys-bait">Bait Station Keys</a>
@@ -713,17 +717,21 @@
 <section class="cat-tiles">
   <div class="container">
     <div class="cat-tiles-grid">
-      <a href="products.html?filter=grease" class="cat-tile">
-        <img src="images/tile-grease.jpg" alt="Food Grade Silicone Grease">
+      <a href="products.html?filter=descaler-toilet" class="cat-tile">
+        <img src="images/descaler-toilet-1pk.jpg" alt="Toilet Bowl Descaler">
+        <span class="cat-tile-label">Toilet Bowl</span>
       </a>
-      <a href="products.html?filter=keys-dispenser" class="cat-tile">
-        <img src="images/tile-keys-disp.jpg" alt="Dispenser Key Sets">
+      <a href="products.html?filter=mats" class="cat-tile">
+        <img src="images/mat-pattern-12pk.jpg" alt="Urinal Mats">
+        <span class="cat-tile-label">Urinal Mats</span>
       </a>
       <a href="products.html?filter=screens" class="cat-tile">
-        <img src="images/tile-urinal.jpg" alt="Urinal Cleaning Supplies">
+        <img src="images/antisplash-black-12pk.jpg" alt="Anti-Splash Black">
+        <span class="cat-tile-label">Anti-Splash Black</span>
       </a>
       <a href="products.html?filter=keys-bait" class="cat-tile">
-        <img src="images/tile-keys-bait.jpg" alt="Mouse Bait Station Keys">
+        <img src="images/keyset-mouse-mix-8pc-kc.jpg" alt="Mouse Bait Keys">
+        <span class="cat-tile-label">Mouse Bait Keys</span>
       </a>
     </div>
   </div>
@@ -796,7 +804,8 @@
         <ul>
           <li><a href="products.html?filter=screens">Urinal Screens</a></li>
           <li><a href="products.html?filter=mats">Urinal Mats</a></li>
-          <li><a href="products.html?filter=descaler">Descalers</a></li>
+          <li><a href="products.html?filter=descaler-urinal">Urinal Descaler</a>
+          <a href="products.html?filter=descaler-toilet">Toilet Bowl Descaler</a></li>
           <li><a href="products.html?filter=grease">Silicone Grease</a></li>
           <li><a href="products.html?filter=keys-dispenser">Dispenser Keys</a></li>
           <li><a href="products.html?filter=keys-bait">Bait Station Keys</a></li>
