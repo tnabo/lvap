@@ -864,7 +864,7 @@
     /* Header keeps just logo + hamburger */
     .header-inner { flex-wrap: nowrap; gap: 12px; }
     .logo-text { display: none; }
-    .logo-mark { height: 30px; }
+    .logo-mark { height: 42px; }
 
     /* Nav becomes a slide-down drawer */
     header { position: sticky; }
@@ -891,8 +891,8 @@
     nav.main-nav.open { display: flex; }
     nav.main-nav > a {
       width: 100%;
-      padding: 14px 16px;
-      font-size: 15px;
+      padding: 16px 18px;
+      font-size: 19px;
       border-bottom: 1px solid var(--gray-100);
       border-radius: 0;
       text-align: left;
@@ -904,8 +904,8 @@
     }
     nav.main-nav .nav-dropdown > a {
       width: 100%;
-      padding: 14px 16px;
-      font-size: 15px;
+      padding: 16px 18px;
+      font-size: 19px;
       border-radius: 0;
       display: block;
     }
@@ -945,35 +945,39 @@
       max-height: 700px;
     }
     .nav-menu a {
-      padding: 14px 24px;
-      font-size: 14px;
+      padding: 14px 28px;
+      font-size: 17px;
       border-radius: 0;
     }
     .nav-menu-divider { display: none; }
 
     /* Body font up for readability */
-    body { font-size: 16px; }
-    p, .product-desc, .product-lead { font-size: 15px; }
+    body { font-size: 20px; }
+    p, .product-desc, .product-lead { font-size: 19px; }
 
     /* Product card tweaks */
-    .product-name { font-size: 15px !important; }
-    .product-desc { display: block !important; font-size: 14px; }
-    .buy-btn { font-size: 13px; padding: 11px 16px; }
+    .product-name { font-size: 19px !important; }
+    .product-desc { display: block !important; font-size: 18px; }
+    .buy-btn { font-size: 16px; padding: 14px 20px; }
 
     /* Forms — prevent iOS zoom on focus */
     .form-row input,
     .form-row select,
-    .form-row textarea { font-size: 16px; }
-    .form-submit { width: 100%; padding: 16px 24px; font-size: 15px; }
+    .form-row textarea { font-size: 18px; }
+    .form-submit { width: 100%; padding: 18px 24px; font-size: 19px; }
 
     /* Buttons in product detail page hero */
-    .btn-amazon, .btn-secondary { padding: 14px 20px; font-size: 14px; }
+    .btn-amazon, .btn-secondary { padding: 16px 24px; font-size: 17px; }
     .buy-row { flex-direction: column; gap: 10px; }
     .buy-row .btn-amazon, .buy-row .btn-secondary { justify-content: center; }
 
     /* Section titles smaller on mobile */
-    .section-title { font-size: 24px; }
-    .page-header h1 { font-size: 32px; }
+    .section-title { font-size: 30px; }
+    .page-header h1 { font-size: 40px; }
+    /* Bigger utility bar text on mobile */
+    .util-bar { font-size: 15px; padding: 10px 0; }
+    .util-bar a { margin-left: 16px; }
+
   }
 
 </style>
