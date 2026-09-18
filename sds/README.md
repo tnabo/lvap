@@ -9,6 +9,7 @@ This folder holds the PDF Safety Data Sheets that are linked from the site foote
 | `urinal-descaler.pdf`             | Heavy Duty Urinal Descaler / Salt Remover (all pack sizes) |
 | `toilet-bowl-descaler.pdf`        | Heavy Duty Toilet Bowl Descaler (all pack sizes)           |
 | `silicone-grease-food-grade.pdf`  | Food-Grade Silicone Grease (all pack sizes) |
+| `urinal-screens.pdf`              | Anti-Splash Urinal Screens (all colors and pack sizes) |
 
 ## Adding a new SDS
 
